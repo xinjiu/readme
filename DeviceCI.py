@@ -35,8 +35,10 @@ def compare_deviceid():
             list_deviceid.append(readsql()[i][0])
     return list_deviceid
 if __name__ == '__main__':
+    list_device = []
     device = compare_deviceid()
     f = open('mail.txt','w')
     for i in device:
-        f.write('device = '+i+"\n")
+    	list_device.append(i)
+    f.write('device = '+str(list_device)+"\n")
     f.close()
